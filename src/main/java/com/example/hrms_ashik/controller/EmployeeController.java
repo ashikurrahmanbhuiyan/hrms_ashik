@@ -2,7 +2,6 @@ package com.example.hrms_ashik.controller;
 
 import com.example.hrms_ashik.dto.EmployeeRequest;
 import com.example.hrms_ashik.dto.EmployeeResponse;
-import com.example.hrms_ashik.entity.Employee;
 import com.example.hrms_ashik.service.EmployeeService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -25,7 +24,7 @@ public class EmployeeController {
     }
 
     @GetMapping("/all")
-    @PreAuthorize("hasAuthority('EMPLOYEE_VIEW')")
+    @PreAuthorize("hasAuthority('HR_VIEW')")
     public List<EmployeeResponse> getAllEmployees() {
         return employeeService.getAllEmployees();
     }

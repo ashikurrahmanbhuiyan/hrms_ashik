@@ -11,9 +11,9 @@ import java.util.Date;
 
 @Service
 public class JwtService {
-    private final String SECRET = "my-super-secret-key-my-super-secret-key";
     @org.jetbrains.annotations.Contract(" -> new")
     private @NonNull Key getSignInKey(){
+        String SECRET = "my-super-secret-key-my-super-secret-key";
         return Keys.hmacShaKeyFor(SECRET.getBytes());
     }
 
@@ -21,7 +21,7 @@ public class JwtService {
         return Jwts.builder()
                 .setSubject(username)
                 .setIssuedAt(new Date())
-                .setExpiration(new Date(System.currentTimeMillis() + 1000 * 60 * 60))
+                .setExpiration(new Date(System.currentTimeMillis() + 10000 * 60 * 60))
                 .signWith(getSignInKey(), SignatureAlgorithm.HS256)
                 .compact();
     }

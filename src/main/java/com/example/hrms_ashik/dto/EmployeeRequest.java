@@ -29,5 +29,5 @@ public class EmployeeRequest {
     @NotNull
     private Double salary;
 
-    private Set<String> roles;
+    private Long userId;
 }

@@ -1,13 +1,10 @@
 package com.example.hrms_ashik.service;
 
 import com.example.hrms_ashik.config.JwtService;
-import com.example.hrms_ashik.dto.EmployeeResponse;
 import com.example.hrms_ashik.dto.LogInRequest;
 import com.example.hrms_ashik.dto.RegisterRequest;
-import com.example.hrms_ashik.entity.Employee;
 import com.example.hrms_ashik.entity.Role;
 import com.example.hrms_ashik.entity.User;
-import com.example.hrms_ashik.repository.EmployeeRepository;
 import com.example.hrms_ashik.repository.RoleRepository;
 import com.example.hrms_ashik.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
@@ -15,11 +12,9 @@ import org.jspecify.annotations.NonNull;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import java.util.Objects;
 import java.util.Set;
 
 @Service
@@ -28,7 +23,6 @@ public class AuthService {
     private final PasswordEncoder passwordEncoder;
     private final UserRepository userRepository;
     private final RoleRepository roleRepository;
-    private final EmployeeRepository employeeRepository;
 
     public String  register(RegisterRequest registerRequest) {
         if(userRepository.existsByUsername(registerRequest.getUsername())) {
@@ -64,4 +58,10 @@ public class AuthService {
                 );
         return jwtService.generateToken(request.getUsername());
     }
+
+
+//    String username = Objects.requireNonNull(SecurityContextHolder
+//                    .getContext()
+//                    .getAuthentication())
+//                    .getName();
 }

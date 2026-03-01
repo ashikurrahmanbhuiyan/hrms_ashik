@@ -4,10 +4,11 @@ package com.example.hrms_ashik.mapper;
 import com.example.hrms_ashik.dto.EmployeeRequest;
 import com.example.hrms_ashik.dto.EmployeeResponse;
 import com.example.hrms_ashik.entity.Employee;
+import com.example.hrms_ashik.entity.User;
 import org.jspecify.annotations.NonNull;
 
 public class EmployeeMapper {
-    public static Employee toEntity(@NonNull EmployeeRequest request) {
+    public static Employee toEntity(@NonNull EmployeeRequest request, User user) {
         Employee employee = new Employee();
 
         return Employee.builder()
@@ -17,7 +18,7 @@ public class EmployeeMapper {
                 .dateOfJoining(request.getDateOfJoining())
                 .phone(request.getPhone())
                 .salary(request.getSalary())
-                .user(employee.getUser())
+                .user(user)
                 .designation(request.getDesignation())
                 .build();
     }

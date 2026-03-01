@@ -2,12 +2,9 @@ package com.example.hrms_ashik.controller;
 
 import com.example.hrms_ashik.dto.LogInRequest;
 import com.example.hrms_ashik.dto.RegisterRequest;
-import com.example.hrms_ashik.entity.User;
-import com.example.hrms_ashik.repository.UserRepository;
 import com.example.hrms_ashik.service.AuthService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
