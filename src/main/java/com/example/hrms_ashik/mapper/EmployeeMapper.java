@@ -9,8 +9,6 @@ import org.jspecify.annotations.NonNull;
 
 public class EmployeeMapper {
     public static Employee toEntity(@NonNull EmployeeRequest request, User user) {
-        Employee employee = new Employee();
-
         return Employee.builder()
                 .firstName(request.getFirstName())
                 .lastName(request.getLastName())

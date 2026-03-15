@@ -29,7 +29,7 @@ public class EmployeeService {
     }
     public List<EmployeeResponse> getAllEmployees() {
         return employeeRepository.findAll().stream()
-                .map(employee -> EmployeeMapper.toResponse(employee)).toList();
+                .map(EmployeeMapper::toResponse).toList();
     }
 
     public EmployeeResponse getMyProfile() {

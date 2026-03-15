@@ -12,6 +12,12 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/auth")
 public class UserController {
     private final AuthService authService;
+
+    @GetMapping("/connection_check")
+    public String connectionCheck() {
+        return "connected successfully";
+    }
+
     @PostMapping("/register")
     public String register(@Valid @RequestBody RegisterRequest registerRequest) {
        return authService.register(registerRequest);
