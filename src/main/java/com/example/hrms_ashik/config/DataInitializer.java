@@ -1,9 +1,11 @@
 package com.example.hrms_ashik.config;
 
-import com.example.hrms_ashik.entity.Role;
-import com.example.hrms_ashik.entity.User;
-import com.example.hrms_ashik.entity.*;
-import com.example.hrms_ashik.repository.*;
+import com.example.hrms_ashik.modules.auth.entity.Permission;
+import com.example.hrms_ashik.modules.auth.entity.Role;
+import com.example.hrms_ashik.modules.auth.entity.User;
+import com.example.hrms_ashik.modules.auth.repository.PermissionRepository;
+import com.example.hrms_ashik.modules.auth.repository.RoleRepository;
+import com.example.hrms_ashik.modules.auth.repository.UserRepository;
 import com.example.hrms_ashik.security.Permissions;
 import lombok.RequiredArgsConstructor;
 import org.jspecify.annotations.NonNull;
